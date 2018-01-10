@@ -1,12 +1,12 @@
 <div class="modal-header">
-    <h4 class="modal-title">Configurar SIP</h4>
+    <h4 class="modal-title">Consultar SIP</h4>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
-      </button>
+    </button>
 </div>
 <div class="modal-body">
     <div class="form-group">
-        <label>phyref</label>
+        <span>Phyref</span>
         <input type="text" class="form-control" [(ngModel)]="phyref">
         <br/>
         <!-- <button class="btn btn-primary btn-block" (click)="editarTable()" *ngIf="sip">Editar Configurações</button> -->
@@ -21,6 +21,13 @@
                     <input *ngIf="isModificarSip" type="text" [(ngModel)]="sip.directoryNumber" name="DirectoryNumber" class="form-control">
                 </td>
             </tr>
+
+            <tr>
+                <th>IP Address</th>
+                <td>{{sip.ipaddress}}</td>
+            </tr>
+
+
             <tr>
                 <th>AuthUserName</th>
                 <td>
@@ -28,13 +35,13 @@
                     <input *ngIf="isModificarSip" type="text" [(ngModel)]="sip.authUserName" name="AuthUserName" class="form-control">
                 </td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <th>AuthPassword</th>
                 <td>
                     <span *ngIf="!isModificarSip">{{sip.authPassword}}</span>
                     <input *ngIf="isModificarSip" type="text" [(ngModel)]="sip.authPassword" name="AuthPassword" class="form-control">
                 </td>
-            </tr>
+            </tr> -->
             <tr>
                 <th>ProxyServerPort</th>
                 <td>
@@ -75,10 +82,10 @@
                 <th>Codec</th>
                 <td>{{sip.codec}}</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <th>Ativo</th>
                 <td>{{sip.enable}}</td>
-            </tr>
+            </tr> -->
 
             <tr>
                 <th>ProxyServerPort</th>

@@ -23,7 +23,7 @@ export class SipSetComponent implements OnInit {
     public nomeBtn: string = "Consultar";
     public isModificarSip: boolean = true;
     public btnSipModificar: boolean = false;
-    public btnModificarNome: string = "Modificar";
+    public btnModificarNome: string = "Configurar";
 
     constructor(
         public activeModal: NgbActiveModal,
@@ -59,7 +59,7 @@ export class SipSetComponent implements OnInit {
 
     public setSipDiagnostics() {
         this.btnSipModificar = true;
-        this.btnModificarNome = "Aguarde";
+        this.btnModificarNome = "Aguarde";        
         if (this.sipIn) {
             this.sipService.setSipActivation(this.holderService.equipamento, this.sipIn)
                 .then(data => {
@@ -74,6 +74,7 @@ export class SipSetComponent implements OnInit {
                         this.callToasty("Ops, aconteceu algo.", "Erro ao executar comando Sip.", "error", 10000);
                     }
                 }, error => {
+                    this.btnSipModificar = false;
                     this.callToasty("Ops, aconteceu algo.", error.mError, "error", 10000);
                 });
         }
@@ -83,6 +84,7 @@ export class SipSetComponent implements OnInit {
         this.sipIn = {
             directoryNumber: this.sip.directoryNumber,
             authUserName: this.sip.authUserName,
+            t38Enable: this.sip.t38Enable,
             authPassword: this.splitAuthPassword(this.sip.directoryNumber),
             proxyServer: this.sip.proxyServer,
             registrarServer: this.sip.registrarServer,

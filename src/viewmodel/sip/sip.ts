@@ -13,11 +13,12 @@ export class Sip {
     callState: string;
     digitMap: string;
     authUserName: string;
-    t38Enable: string;
+    t38Enable: boolean;
     packetsLost: string;
     directoryNumber: string;
     conferenceCallURI: string;
     userAgentDomain: string;
     registrarServer: string;
-    proxyServerPort: string
+    proxyServerPort: string;
+    ipaddress: string;
 }

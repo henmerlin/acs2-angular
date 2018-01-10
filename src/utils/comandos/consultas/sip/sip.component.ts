@@ -82,6 +82,7 @@ export class SipGetComponent implements OnInit {
         this.sipIn = {
             directoryNumber: this.sip.directoryNumber,
             authUserName: this.sip.authUserName,
+            t38Enable: this.sip.t38Enable,
             authPassword: this.splitAuthPassword(this.sip.directoryNumber),
             proxyServer: this.sip.proxyServer,
             registrarServer: this.sip.registrarServer,

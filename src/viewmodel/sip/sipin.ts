@@ -6,5 +6,6 @@ export class SipIn {
     registrarServer: string;
     userAgentDomain: string;
     outboundProxy: string;
-    phyReferenceList: string
+    phyReferenceList: string = "1";
+    t38Enable: boolean = false;
 }
